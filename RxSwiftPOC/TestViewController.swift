@@ -17,9 +17,9 @@ import RxSwift
 
 
 class TestViewController: UIViewController {
-
+    
     @IBOutlet weak var txtInput: UITextField!
-
+    
     @IBOutlet weak var txtPass1: UITextField!
     @IBOutlet weak var txtPass2: UITextField!
     @IBOutlet weak var outputValidatedPassword: UILabel!
@@ -32,7 +32,7 @@ class TestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         
@@ -40,18 +40,17 @@ class TestViewController: UIViewController {
         
         
         //Initialize ViewModel
-        
-        let viewModel = TestViewModel(input: txtInput.rx_text.asObservable(), tPass1: txtPass1.rx_text.asObservable(), tPass2: txtPass2.rx_text.asObservable(), output: btnTest.rx_tap.asObservable())
-        viewModel.validatedUsername.bindTo(outputLbl.rx_text).addDisposableTo(disposeBag)
-        viewModel.validatedPassword.bindTo(outputValidatedPassword.rx_text).addDisposableTo(disposeBag)
-        viewModel.pressButton.bindTo(btnTest.rx_enabled).addDisposableTo(disposeBag)
+                let viewModel = TestViewModel(password: txtPass1.rx_text.asDriver(), repeatedPassword: txtPass2.rx_text.asDriver())
+        //        viewModel.validatedUsername.bindTo(outputLbl.rx_text).addDisposableTo(disposeBag)
+                viewModel.validatedPassword.drive(outputValidatedPassword.rx_text).addDisposableTo(disposeBag)
+        //        viewModel.pressButton.bindTo(btnTest.rx_enabled).addDisposableTo(disposeBag)
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }

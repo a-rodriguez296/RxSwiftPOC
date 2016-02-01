@@ -7,55 +7,35 @@
 //
 
 import RxSwift
+import RxCocoa
 
 
 class TestViewModel {
     
-    //    let validatedSignal: Observable<Bool>
-    let validatedUsername: Observable<String>
-    let validatedPassword: Observable<String>
+
+    let validatedPassword: Driver<String>
     
-    let pressButton : Observable<Bool>
-    
-    var input:Observable<String>
-    
-    var pass1:Observable<String>
-    var pass2:Observable<String>
-    
-    var btn:Observable<Void>
+
     
     
-    
-    init(input:Observable<String>,tPass1:Observable<String>, tPass2:Observable<String>, output:Observable<Void>){
-        self.input = input
-        self.btn = output
+    init(password: Driver<String>, repeatedPassword: Driver<String>){
         
-        pass1 = tPass1
-        pass2 = tPass2
-        
-        
-        validatedUsername = self.input
-            .filter({
-                return $0.characters.count>2})
-            .map({ username -> String in
-                return username.containsString("asdf") ? "Valid username" : "invalid username"
+        validatedPassword = Driver
+            .combineLatest(password, repeatedPassword, resultSelector: {
+                return ($0, $1)
             })
-        
-        validatedPassword = Observable.combineLatest(pass1, pass2, resultSelector: {
-            return ($0,$1)
-        }).map{
-            print("\($0)  \($1)" )
-            return $0 == $1 ? "Passwords iguales" : "Passwords diferentes"
+            .filter{
+                return $0.characters.count > 0 && $1.characters.count > 0
+            }
+            .map{
+                print("\($0) \($1)")
+                return $0 == $1 ? "Passwords iguales" : "Passwords diferentes"
         }
-        
-        
-        pressButton = self.btn
-            .map({
-                return false
-            })
-        
+
         
     }
+    
+
     
     
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CA0830B1C5FEF3500F3C2D6 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0830A1C5FEF3500F3C2D6 /* Protocols.swift */; };
+		9CA0830D1C5FEFF700F3C2D6 /* DefaultImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0830C1C5FEFF700F3C2D6 /* DefaultImplementations.swift */; };
 		9CE34D0C1C5A9DE600100CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE34D0B1C5A9DE600100CE8 /* AppDelegate.swift */; };
 		9CE34D111C5A9DE600100CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE34D0F1C5A9DE600100CE8 /* Main.storyboard */; };
 		9CE34D131C5A9DE600100CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CE34D121C5A9DE600100CE8 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		5404FDA4E96403D8ED4E4C79 /* Pods_RxSwiftPOC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftPOC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CA0830A1C5FEF3500F3C2D6 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		9CA0830C1C5FEFF700F3C2D6 /* DefaultImplementations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultImplementations.swift; sourceTree = "<group>"; };
 		9CE34D081C5A9DE600100CE8 /* RxSwiftPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE34D0B1C5A9DE600100CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CE34D101C5A9DE600100CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				9CE34D121C5A9DE600100CE8 /* Assets.xcassets */,
 				9CE34D141C5A9DE600100CE8 /* LaunchScreen.storyboard */,
 				9CE34D171C5A9DE600100CE8 /* Info.plist */,
+				9CA0830A1C5FEF3500F3C2D6 /* Protocols.swift */,
+				9CA0830C1C5FEFF700F3C2D6 /* DefaultImplementations.swift */,
 			);
 			path = RxSwiftPOC;
 			sourceTree = "<group>";
@@ -336,7 +342,9 @@
 			files = (
 				9CE34D3C1C5AA0EF00100CE8 /* TestViewModel.swift in Sources */,
 				9CE34D3A1C5A9FB800100CE8 /* TestViewController.swift in Sources */,
+				9CA0830D1C5FEFF700F3C2D6 /* DefaultImplementations.swift in Sources */,
 				9CE34D0C1C5A9DE600100CE8 /* AppDelegate.swift in Sources */,
+				9CA0830B1C5FEF3500F3C2D6 /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
